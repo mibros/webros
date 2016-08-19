@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="description?">
+<meta name="keywords" content="keywords">
+<title>サイトのタイトル</title>
+<style type="text/css">
+body {
+    width:900px;
+    margin:20px auto;  /*←上下マージン20px、左右はautoでセンター合わせに*/
+}
+header, nav, article, aside, section, footer {
+    display:block;  /*←新要素はデフォルトではinline要素なのでこの指定が必要。*/
+}
+header, nav, article, aside, section, footer {
+    border:1px solid #ccc;  /*←各ブロックに枠線をつけてわかりやすくしました。*/
+    margin:0px 0px 10px;
+    padding:20px;
+}
+header {
+    text-align:center;
+}
+nav {
+    text-align:center;
+    padding:5px;
+    }
+nav ul, nav li {
+    list-style-type:none;
+    display:inline;  /*←display:inlineでli要素を横並びに。*/
+    padding:0px 10px;
+}
+nav h1 {
+    display:none;  /*←display:noneで非表示にする。CSSが無効の時は見える。*/
+}
+article {
+    float:left;  /*←article（メインブロック）はfloat:leftで左寄せに。*/
+    width:620px;
+}
+aside {
+    float:right;  /*←aside（サイドバー）はfloat:rightで右寄せに。*/
+    width:180px;
+}
+footer {
+    clear:both;  /*←articleとasideのfloatを、これでクリア。*/
+    text-align: center;
+    padding: 5px;
+    font-size: 80%;
+}
+</style>
+
+</head>
+
+<body>
+<header>
+<h1>Title</h1>
+<h2>SubTitle</h2>
+<p>Description</p>
+</header>
+<nav>
+<h1>グローバルナビゲーション</h1>
+<ul>
+<li><a href="#">HOME</a></li>
+<li><a href="#">MENU1</a></li>
+<li><a href="#">MENU2</a></li>
+<li><a href="#">MENU3</a></li>
+<li><a href="#">SITE MAP</a></li>
+<li><a href="#">ABOUT</a></li>
+</ul>
+</nav>
+
+<article>
+<section>
+<h1>セクションと見出し</h1>
+<p>文章を制作するとき、章・節・項といったレベル（階層）がある。HTMLでは、章・節・項を分けるときにsection要素を使用して明示的に章・節・項といった固まりを示す事ができる。<br>
+そのレベル（階層）は、h1〜h6の見出し要素で示す。セクションと見出しは密接に関わっている。</p>
+
+<h2>見出しのレベルで暗示的にセクションができる</h2>
+<p>セクション内にある最初の見出しのレベルで、そのセクションのレベルが決定される。ただし、その後に別の見出しがある場合は、特にセクションを示す要素が無くても、暗黙のセクションができる事になっている。<br>
+  後に続く見出しが、前の見出しのレベル以上であれば、そこで前のセクションは終了し、新しい暗黙のセクションが開始される。<br>
+後に続く見出しのレベルが小さければ、元のセクションに含まれる暗黙のサブセクションとして認識される。</p>
+
+<h2>セクション要素で明示的にしよう</h2>
+<p>見出しによって暗示的なセクションが認識されるが、セクションである範囲には、明示的にセクション要素を付けて、適切な見出しをつけることが推奨されている。<br>
+セクション要素で明示的に区切る事によって、h1〜h6の見出し要素はセクション内に自由に入れる事ができるようになった（例えば同じページ内にh1が何度出てきてもOK）。しかし「セクションのレベルにあった適切な見出しを入れる」ことが推奨されている。 </p>
+</section>
+<section>
+<h1>セクションに分ける要素</h1>
+<p>このサンプルでは、&lt;section&gt;要素を使って、ここから上のセクションと区切っている。<br>
+セクションを表す要素は、&lt;section&gt;のほかに&lt;article&gt;&lt;aside&gt;&lt;nav&gt;の合計4つ。
+</p>
+<p>
+&lt;article&gt;は、本文中の完結した内容を区切る役目。<br>
+&lt;aside&gt;は、本文中のメインコンテンツでない部分（例えばサイドメニュー）を分ける役目。<br>
+&lt;section&gt;は、&lt;article&gt;&lt;aside&gt;内で、レベルをわける役目。見出し要素が必要。<br>
+&lt;nav&gt;は、メインナビゲーション部分を特定する。
+</p>
+<p>
+この他に &lt;header&gt;&lt;footer&gt;要素を使用して、ヘッダー部分とフッター部分を区切る。</p>
+</section>
+
+</article>
+
+<aside>
+<section>
+<h1>カテゴリー</h1>
+<ul>
+<li><a href="#">カテゴリー1</a></li>
+<li><a href="#">カテゴリー2</a></li>
+<li><a href="#">カテゴリー3</a></li>
+<li><a href="#">カテゴリー4</a></li>
+<li><a href="#">カテゴリー5</a></li>
+</ul>
+</section>
+<section>
+<h1>アーカイブ</h1>
+<ul>
+<li><a href="#">アーカイブ1</a></li>
+<li><a href="#">アーカイブ2</a></li>
+<li><a href="#">アーカイブ3</a></li>
+<li><a href="#">アーカイブ4</a></li>
+<li><a href="#">アーカイブ5</a></li>
+</ul>
+</section>
+</aside>
+<footer>
+Copyright © <a href="http://google.com/" target="_blank">ほんっとにはじめてのHTML</a> All Rights Reserved.
+<address>by : <a href="http://google.com" target="_blank">test  </a></address>
+</footer>
+</body>
+</html>
